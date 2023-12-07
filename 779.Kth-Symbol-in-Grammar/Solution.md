@@ -1,4 +1,4 @@
-# 779. K-th Symbol in Grammar
+# [779. K-th Symbol in Grammar](https://leetcode.com/problems/k-th-symbol-in-grammar/description/)
 ---
 tags:
   - DFS
