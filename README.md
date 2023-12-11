@@ -2,7 +2,12 @@
 This repository contains various Leetcode problems that highlight valuable algorithms and data structures
 
 ## Language:
+
 All code is provided in Java and my own personal Pseduo Code allowing for easy translation of these solutions to any target language.
+
+## Tags:
+
+These notes originally come from an [Obsidian](https://obsidian.md/) notebook and may contain internal links and tags such as [[]] or the "#" symbol or the tags at the top of every document. If you add these to your own obsidian notebook, problems will link together in the graph based on similar data structures, algorithms, time complexity, space complexity, difficulty, and more. 
 
 ## Summaries:
 | Problem | Summary | Link To Full Solution | Tags |
