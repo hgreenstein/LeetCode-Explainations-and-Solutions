@@ -48,7 +48,31 @@ Once we finish our BFS from the root, we still need to ensure we visited every n
 
 ## Pseudo Code:
 
-1. 
+1. Intialize the visited set, integer queue, and set of all nodes that are not the root called `notRoot` as empty
+2. For every pair of children(left and right children are of same length)
+	1. Get the current left and right child of node `i` and set them equal to `left` and `right`
+	2. If `left` is valid
+		1. Add the `left` child to the `notRoot` set
+	3. If `right` is valid
+		1. Add the `right` child to the `notRoot` set
+3. If we have fewer or more than the number of nodes we expect as children in the tree ($n-1$) then short circuit and return false
+4. Initialize the root to 0
+5. For each node `i` from 0 to `n`
+	1. If the set doesn't contain `i`, it must be the root
+		1. Offer `i` to the heap to start the traversal
+		2.  Break out of the while loop, unnecessary checking further we can guarantee the rest are also children
+6.  While the queue is not empty
+	1. Get the `currentNode` as the top node of the queue
+	2. If we have already visited this child, 
+		1. There is either a cycle or more than one parent for the node, return false, the tree is invalid
+	3. Add `currentNode` to the visited set
+	2. If the left child is valid
+		1. Add the left child to the `notRoot` set
+	3. If right child is valid
+		1. Add the right child to the `notRoot` set
+7. Return if we have visited all nodes in the tree, in other words that the tree is fully connected
+
+
 ## Time Complexity O(n) - Three O(n) loops, two for root checking and one for DFS 
 *Where O(DFS) = O(V + E) but we know that a binary tree has n - 1 edges hence still O(n)*
 ## Space Complexity O(n) - Size of Visited Set and notRoot Set always, Queue in worst case 
