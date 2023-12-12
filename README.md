@@ -1,4 +1,4 @@
-# LeetCode-Explainations-and-Solutions
+# LeetCode-Explanations-and-Solutions
 This repository contains various Leetcode problems that highlight valuable algorithms and data structures
 
 ## Language:
