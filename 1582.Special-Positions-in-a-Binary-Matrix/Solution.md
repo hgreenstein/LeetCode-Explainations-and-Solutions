@@ -71,13 +71,13 @@ class Solution:
              
         # Check rows
         for i in range(rows):
-            if mat[i].count(1) != 1 or sum(mat[i]) != 1:
+            if mat[i].count(1) != 1:
                 boolmat[i] = [False] * cols
 
         # Check columns
         for j in range(cols):
             column = [mat[i][j] for i in range(rows)]
-            if column.count(1) != 1 or sum(column) != 1:
+            if column.count(1) != 1:
                 for row in boolmat:
                     row[j] = False
 
