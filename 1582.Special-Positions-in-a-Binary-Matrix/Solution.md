@@ -3,8 +3,9 @@
 ---
 tags:
   - 2Dgrid
-  - O_n2
-  - O_n2space
+  - O_mxn
+  - O_mxnspace
+  - O_mplusnspace
   - Easy
 ---
 ## Problem Statement: 
@@ -58,9 +59,20 @@ In the end, all we have to do is traverse the entire graph, and sum the position
 ## Time Complexity O($m*n$) - 
 
 Checking every square in the matrix 3 times each time O($m*n$) where `m = rows` and `n = columns`
-## Space Complexity O($m*n$) - 
+## Space Complexity Python O($m*n$) - 
 
 Storing a boolean matrix of size m * n 
+
+## Space Optimization Java O($n + m$)
+
+The python code was written using a new coding input style for ChatGPT I created call "//py" mode, more information [here](https://harrisgreenstein.com/blog).
+
+When I re-approached the code in Java, I found a space optimization to reduce the array size. 
+
+First, we sum the columns and rows in a single loop and store two arrays of size `m` and `n` where the index in each array of the sum of that row or column.
+
+When we check each positions, instead of checking just the corresponding index in the boolean matrix, we check both that the column sum is 1 and the row sum is 1 in the `rowSum` and `colSum` matricies as well as that the position in the original matrix is equal to 1, which remains the same as before. 
+
 ## Python Code:
 
 ```python
@@ -89,4 +101,32 @@ class Solution:
                     result += 1
 
         return result
+```
+
+## Java Code:
+
+```java
+class Solution {
+    public int numSpecial(int[][] mat) {
+        int rows = mat.length, cols = mat[0].length;
+        
+        int[] colSum = new int[cols];
+        int[] rowSum = new int[rows];
+        for(int row = 0; row < rows; row++){
+            for(int col = 0; col < cols; col++){
+                rowSum[row] += mat[row][col];
+                colSum[col] += mat[row][col];
+            }
+        }
+        int result = 0;
+        for(int row = 0; row < rows; row++){
+            for(int col = 0; col < cols; col++){
+                if(rowSum[row] == 1 && colSum[col] == 1 && mat[row][col] == 1){
+                    result++;
+                }
+            }
+        }
+        return result; 
+    }
+}
 ```
