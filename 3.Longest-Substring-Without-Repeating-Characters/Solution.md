@@ -36,7 +36,7 @@ The sliding window uses two pointers to find the longest consecutive substring. 
 
 ## Visualization:
 
-![[sliding_window_adjusted_v2 (1).gif]]
+![Sliding Window Visualization](https://i.imgur.com/CLkNkmA.gif)
 
 ## Pseudo Code:
 
