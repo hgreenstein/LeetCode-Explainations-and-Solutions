@@ -26,7 +26,7 @@ The solution set **must not** contain duplicate subsets. Return the solution i
 
 ## Logic & Algorithms:
 
-![[Subsets Backtracking Decision Tree]]
+![Subset Decision Tree Drawing](https://i.imgur.com/d9DeVaY.png)
 
 This is the most simple backtracking problem. Essentially you have to brute force building the $2^n$ different subsets of any given set.  
 
